@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install zip
 
+COPY .env .
 COPY github_key .
 RUN eval $(ssh-agent) && \
     ssh-add github_key && \
