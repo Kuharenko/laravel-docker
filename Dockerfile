@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install zip
 
+ADD https://api.github.com/repos/Kuharenko/laravel-docker/git/refs/heads/main version.json
+
 COPY github_key .
 RUN eval $(ssh-agent) && \
     ssh-add github_key && \
