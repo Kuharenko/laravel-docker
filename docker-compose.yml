@@ -1,0 +1,11 @@
+# docker run -dp 80:8000 -v /opt/project/config/.env:/usr/src/laravel/.env okukharenko/laravel
+version: "2"
+services:
+    redis:
+        image: redis
+    api:
+        image: okukharenko/laravel
+        ports:
+        -   "80:8000"
+        volumes:
+        -  /opt/project/config/.env:/usr/src/laravel/.env

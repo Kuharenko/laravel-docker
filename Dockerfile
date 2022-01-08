@@ -1,4 +1,3 @@
-#docker run -dp 80:8000 -v /opt/project/config/.env:/usr/src/laravel/.env okukharenko/laravel
 FROM php:8.0
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
